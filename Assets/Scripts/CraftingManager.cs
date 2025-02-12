@@ -48,20 +48,22 @@ public class CraftingManager : MonoBehaviour
         resultSlot.gameObject.SetActive(false);
         resultSlot.item = null;
         string currentRecipeString = "";
-        foreach(Item item in itemList)
+        foreach (Item item in itemList)
         {
             if (item != null)
             {
-                currentRecipeString+=item.itemName;
-            }else
+                currentRecipeString += item.itemName;
+            }
+            else
             {
-                currentRecipeString+="null";
+                currentRecipeString += "null";
             }
         }
         Debug.Log(currentRecipeString);
-        for(int i = 0; i<recipes.Length; i++) {
+        for (int i = 0; i < recipes.Length; i++)
+        {
+        }
     }
-
     public void OnMouseDownItem(Item item)
     {
         if (currentItem == null)
