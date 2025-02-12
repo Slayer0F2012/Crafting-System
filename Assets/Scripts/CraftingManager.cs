@@ -62,7 +62,20 @@ public class CraftingManager : MonoBehaviour
         Debug.Log(currentRecipeString);
         for (int i = 0; i < recipes.Length; i++)
         {
+            if (recipes[i] == currentRecipeString)
+            {
+                resultSlot.gameObject.SetActive(true);
+                resultSlot.GetComponent<Image>().sprite = recipeResults[i].GetComponent<Image>().sprite;
+                resultSlot.item = recipeResults[i];
+            }
         }
+    }
+    public void OnClickSlot(Slot slot)
+    {
+        slot.item = null;
+        itemList[slot.index] = null;
+        slot.gameObject.SetActive(false);
+        CheckForCompletedRecipes();
     }
     public void OnMouseDownItem(Item item)
     {
