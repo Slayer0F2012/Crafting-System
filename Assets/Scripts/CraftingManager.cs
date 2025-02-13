@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class CraftingManager : MonoBehaviour
 {
-
     private Item currentItem;
     public Image customCursor;
     public Slot[] craftingSlots;
@@ -14,10 +13,13 @@ public class CraftingManager : MonoBehaviour
     public Item[] recipeResults;
     public Slot resultSlot;
 
+    public float minDropDistance = 50f;
+
     public void Update()
     {
         if (Input.GetMouseButtonUp(0))
-        { if (currentItem != null)
+        {
+            if (currentItem != null)
             {
                 customCursor.gameObject.SetActive(false);
                 Slot nearestSlot = null;
@@ -32,10 +34,13 @@ public class CraftingManager : MonoBehaviour
                     }
                 }
 
-                nearestSlot.gameObject.SetActive(true);
-                nearestSlot.GetComponent<Image>().sprite = currentItem.GetComponent<Image>().sprite;
-                nearestSlot.item = currentItem;
-                itemList[nearestSlot.index] = currentItem;
+                if (shortestDistance <= minDropDistance)
+                {
+                    nearestSlot.gameObject.SetActive(true);
+                    nearestSlot.GetComponent<Image>().sprite = currentItem.GetComponent<Image>().sprite;
+                    nearestSlot.item = currentItem;
+                    itemList[nearestSlot.index] = currentItem;
+                }
 
                 currentItem = null;
 
@@ -43,6 +48,7 @@ public class CraftingManager : MonoBehaviour
             }
         }
     }
+
     public void CheckForCompletedRecipes()
     {
         resultSlot.gameObject.SetActive(false);
@@ -70,6 +76,7 @@ public class CraftingManager : MonoBehaviour
             }
         }
     }
+
     public void OnClickSlot(Slot slot)
     {
         slot.item = null;
@@ -77,6 +84,7 @@ public class CraftingManager : MonoBehaviour
         slot.gameObject.SetActive(false);
         CheckForCompletedRecipes();
     }
+
     public void OnMouseDownItem(Item item)
     {
         if (currentItem == null)
