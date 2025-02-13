@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec77434777baeb744bc753e8bce26ae9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: {fileID: 0}
 --- !u!114 &47584215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -289,7 +289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec77434777baeb744bc753e8bce26ae9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: prata
+  itemName: {fileID: 0}
 --- !u!114 &139707823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -986,7 +986,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec77434777baeb744bc753e8bce26ae9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: madeira
+  itemName: {fileID: 11400000, guid: 1bd0b34435d0ba1498da995c70f8fd17, type: 2}
 --- !u!1 &932679300
 GameObject:
   m_ObjectHideFlags: 0
@@ -1500,7 +1500,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec77434777baeb744bc753e8bce26ae9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: pedra
+  itemName: {fileID: 11400000, guid: 782e74039fdfacd44a2a58283f959ff2, type: 2}
 --- !u!114 &1345724408
 MonoBehaviour:
   m_ObjectHideFlags: 0
